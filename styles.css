@@ -1,0 +1,119 @@
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&display=swap");
+
+:root {
+  --base-1: #3d2fa9;
+  --base-2: #ff7722;
+  --base-3: #ff3d33;
+  --base-4: #785f47;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+h1 {
+  text-transform: uppercase;
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: 3rem;
+  font-weight: 800;
+  line-height: 1;
+}
+
+p {
+  text-transform: uppercase;
+  font-family: "DM Mono", monospace;
+  font-size: 0.9rem;
+}
+
+section {
+  position: relative;
+  width: 100%;
+  height: 100svh;
+  overflow: hidden;
+}
+
+.intro,
+.outro {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.sticky-cards {
+  background-color: #e3e3db;
+  perspective: 1000px;
+}
+
+.sticky-cards .card {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 65%;
+  height: 60%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  padding: 2.5rem;
+  border-radius: 1rem;
+  color: #fff;
+  transform-origin: center bottom;
+  will-change: transform;
+}
+
+.card .col {
+  flex: 1;
+  height: 100%;
+}
+
+.card .col:nth-child(1) {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 0.5rem;
+}
+
+.card .col:nth-child(2) {
+  border-radius: 0.75rem;
+  overflow: hidden;
+}
+
+.card#card-1 {
+  background-color: var(--base-1);
+  z-index: 5;
+}
+
+.card#card-2 {
+  background-color: var(--base-2);
+  z-index: 4;
+}
+
+.card#card-3 {
+  background-color: var(--base-3);
+  z-index: 3;
+}
+
+.card#card-4 {
+  background-color: var(--base-4);
+  z-index: 2;
+}
+
+@media (max-width: 1000px) {
+  .sticky-cards .card {
+    width: calc(100% - 4rem);
+    height: 75%;
+    flex-direction: column;
+  }
+
+  .card .col {
+    width: 100%;
+  }
+}
